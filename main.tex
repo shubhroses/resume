@@ -1,0 +1,164 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm,
+    footskip=1.0cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0} % black
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Shubhrose Singh Resume},
+    pdfauthor={Shubhrose Singh},
+    colorlinks=true,
+    urlcolor=primaryColor,
+    linkcolor=primaryColor
+]{hyperref}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+\usepackage{charter}
+
+\raggedright
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large\color{primaryColor}}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.3cm}{0.2cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10cm,
+        parsep=0.10cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+% New robust entry environment for title/date rows
+\newenvironment{entry}[2]{
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l r}
+        \textbf{#1} & #2 \\
+    \end{tabular*}
+}{}
+
+% Header
+\begin{document}
+    \begin{center}
+        {\LARGE \textbf{Shubhrose Singh}}\\[4pt]
+        Dallas, TX \textbar\ 
+        \href{mailto:shubhroses@gmail.com}{shubhroses@gmail.com} \textbar\ 
+        (510) 246-4379 \textbar\ 
+        \href{https://github.com/shubhroses}{github.com/shubhroses} \textbar\ 
+        \href{https://www.linkedin.com/in/shubhrose-s-887abbb4/}{linkedin.com/in/shubhrose-s-887abbb4}
+    \end{center}
+
+    \vspace{6pt}
+
+    % Professional Summary
+    \section{Professional Summary}
+    Python Developer and Data Engineer experienced in building scalable data pipelines, optimizing data workflows, and improving system performance. Proficient in Python, SQL, and cloud technologies. Strong track record of enhancing data efficiency and enabling data-driven decision-making.
+
+    \section{Technical Skills}
+    \textbf{Languages:} Python, Java, SQL \\
+    \textbf{Data Engineering:} ETL/ELT, dbt, Snowflake, Postgres \\
+    \textbf{Libraries/Frameworks:} Pandas, NumPy, Flask, scikit-learn, PyTorch \\
+    \textbf{Cloud/DevOps:} AWS, OpenShift, Kubernetes, Docker, Terraform, GitLab CI/CD \\
+    \textbf{Tools:} Git, GitHub, MLflow, Prefect
+
+    \section{Professional Experience}
+
+    \begin{entry}{Python Developer / Data Engineer, USAA, Dallas, TX}{June 2023 -- Present}
+    \end{entry}
+    \begin{highlights}
+        \item Developed a dbt-based data pipeline to monitor Snowflake cost metrics, optimizing queries and driving significant cost savings.
+        \item Built a Python application with Pandas and NumPy for loading data into Snowflake, increasing upload speed by 30\% and validation by 25\%.
+        \item Implemented and maintained CI/CD pipelines in GitLab, reducing deployment times by 70\% and improving team collaboration.
+    \end{highlights}
+
+    \vspace{0.2cm}
+    \begin{entry}{Python Data Engineer Intern, USAA, Dallas, TX}{June 2022 -- August 2022}
+    \end{entry}
+    \begin{highlights}
+        \item Created a Flask dashboard hosted on OpenShift 4 Kubernetes to display user adoption metrics, ensuring high availability and scalability.
+    \end{highlights}
+
+    \section{Education}
+
+    \begin{entry}{M.S. Computer Science, California State Polytechnic University, Pomona}{Sept 2021 -- June 2023}
+    \end{entry}
+    GPA: 3.95
+
+    \vspace{0.10cm}
+    \begin{entry}{B.S. Computational Mathematics, University of California, Los Angeles}{Sept 2017 -- June 2021}
+    \end{entry}
+
+    \section{Projects}
+
+    \begin{entry}{NBA Game Predictor (\href{https://nba-predictions-app.vercel.app/}{nba-predictions-app.vercel.app})}{}
+    \end{entry}
+    \begin{highlights}
+        \item Engineered a full-stack web app to predict NBA outcomes with 63\% accuracy using RidgeClassifier.
+        \item Designed a pipeline from data ingestion to prediction; orchestrated with Prefect, tracked with MLflow, deployed with Kubernetes.
+        \item Tech: React, Python, scikit-learn, MLflow, Prefect, Kubernetes, Tailwind CSS
+    \end{highlights}
+
+    \vspace{0.2cm}
+    \begin{entry}{Car Dealership App (\href{https://car-dealership-production-a328.up.railway.app/dealership/}{car-dealership-production-a328.up.railway.app})}{}
+    \end{entry}
+    \begin{highlights}
+        \item Developed a Spring Boot web app with admin/customer roles and inventory management.
+        \item Deployed to Railway with integrated CI/CD.
+        \item Tech: Java 17, Spring Boot/Security, JPA/Hibernate, H2, Thymeleaf, HTML5, Bootstrap, JS, Maven
+    \end{highlights}
+
+    \vspace{0.2cm}
+    \begin{entry}{Finance Market Analyzer (\href{https://finance-tracker-vmp3idcqqmpypq7reczbzp.streamlit.app/}{finance-tracker-vmp3idcqqmpypq7reczbzp.streamlit.app})}{}
+    \end{entry}
+    \begin{highlights}
+        \item Built a real-time stock analysis platform with technical indicators, sentiment analysis, and news aggregation.
+        \item Implemented API rate limiting, caching, and Plotly visualizations.
+        \item Tech: Python, Streamlit, Plotly, yfinance, Pandas, BeautifulSoup4
+    \end{highlights}
+
+    \section{Research Experience}
+
+    \begin{entry}{Hybrid Edge-Cloud Framework for Multi-Resolution Image Fusion in Agriculture}{Aug 2022 -- May 2023}
+    \end{entry}
+    California State Polytechnic University, Pomona
+    \begin{highlights}
+        \item Led a team to develop a high-res image generation tool using deep learning on cloud and edge devices.
+        \item Achieved 60\% reduction in execution time and over 80\% similarity to ground-truth images.
+        \item Coordinated data collection and project milestones with faculty and team members.
+    \end{highlights}
+
+\end{document}
