@@ -3,11 +3,11 @@
 % Packages:
 \usepackage[
     ignoreheadfoot,
-    top=2cm,
-    bottom=2cm,
-    left=2cm,
-    right=2cm,
-    footskip=1.0cm,
+    top=1.3cm,
+    bottom=1.0cm,
+    left=1.2cm,
+    right=1.2cm,
+    footskip=0.6cm,
 ]{geometry}
 \usepackage{titlesec}
 \usepackage{tabularx}
@@ -17,6 +17,7 @@
 \usepackage{enumitem}
 \usepackage{fontawesome5}
 \usepackage{amsmath}
+\usepackage{multicol}
 \usepackage[
     pdftitle={Shubhrose Singh Resume},
     pdfauthor={Shubhrose Singh},
@@ -48,14 +49,14 @@
 \setlength{\columnsep}{0.15cm}
 \pagenumbering{gobble}
 
-\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large\color{primaryColor}}{}{0pt}{}[\vspace{1pt}\titlerule]
-\titlespacing{\section}{-1pt}{0.3cm}{0.2cm}
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large\color{primaryColor}}{}{0pt}{}[\vspace{0pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.25cm}{0.15cm}
 
 \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
 \newenvironment{highlights}{
     \begin{itemize}[
-        topsep=0.10cm,
-        parsep=0.10cm,
+        topsep=0.07cm,
+        parsep=0.07cm,
         partopsep=0pt,
         itemsep=0pt,
         leftmargin=10pt
@@ -74,7 +75,7 @@
 % Header
 \begin{document}
     \begin{center}
-        {\LARGE \textbf{Shubhrose Singh}}\\[4pt]
+        {\LARGE \textbf{Shubhrose Singh}}\\[3pt]
         Dallas, TX \textbar\ 
         \href{mailto:shubhroses@gmail.com}{shubhroses@gmail.com} \textbar\ 
         (510) 246-4379 \textbar\ 
@@ -82,83 +83,93 @@
         \href{https://www.linkedin.com/in/shubhrose-s-887abbb4/}{linkedin.com/in/shubhrose-s-887abbb4}
     \end{center}
 
-    \vspace{6pt}
+    \vspace{-0.3cm}
 
     % Professional Summary
     \section{Professional Summary}
     Python Developer and Data Engineer experienced in building scalable data pipelines, optimizing data workflows, and improving system performance. Proficient in Python, SQL, and cloud technologies. Strong track record of enhancing data efficiency and enabling data-driven decision-making.
-
+    \vspace{-0.05cm}
     \section{Technical Skills}
-    \textbf{Languages:} Python, Java, SQL \\
-    \textbf{Data Engineering:} ETL/ELT, dbt, Snowflake, Postgres \\
-    \textbf{Libraries/Frameworks:} Pandas, NumPy, Flask, scikit-learn, PyTorch \\
-    \textbf{Cloud/DevOps:} AWS, OpenShift, Kubernetes, Docker, Terraform, GitLab CI/CD \\
-    \textbf{Tools:} Git, GitHub, MLflow, Prefect
-
+    \begin{minipage}[t]{0.48\textwidth}
+        \textbf{Languages:} Python, Java, SQL \\[-1pt]
+        \textbf{Data Engineering:} ETL/ELT, dbt, Snowflake, Postgres \\[-1pt]
+        \textbf{Libraries/Frameworks:} Pandas, NumPy, Flask
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \textbf{Cloud/DevOps:} AWS, OpenShift, Kubernetes, Docker \\[-1pt]
+        \textbf{Tools:} Git, GitHub, MLflow, Prefect, Terraform \\[-1pt]
+        \textbf{ML/DL:} scikit-learn, PyTorch
+    \end{minipage}
+    \vspace{-0.05cm}
     \section{Professional Experience}
 
     \begin{entry}{Python Developer / Data Engineer, USAA, Dallas, TX}{June 2023 -- Present}
     \end{entry}
+    \vspace{-0.35cm}
     \begin{highlights}
-        \item Developed a dbt-based data pipeline to monitor Snowflake cost metrics, optimizing queries and driving significant cost savings.
-        \item Built a Python application with Pandas and NumPy for loading data into Snowflake, increasing upload speed by 30\% and validation by 25\%.
-        \item Implemented and maintained CI/CD pipelines in GitLab, reducing deployment times by 70\% and improving team collaboration.
+        \item Developed a dbt-based data pipeline to monitor Snowflake cost metrics, optimizing queries and driving significant cost savings across the organization.
+        \item Built a Python application used by 100+ engineers for loading data into Snowflake, increasing upload speed by 30\% and validation by 25\%, while enhancing error processes to boost user experience.
+        \item Implemented and maintained CI/CD pipelines in GitLab, reducing deployment times by 70\% and improving team collaboration, enabling quicker feature rollouts.
     \end{highlights}
 
-    \vspace{0.2cm}
+    \vspace{0.05cm}
     \begin{entry}{Python Data Engineer Intern, USAA, Dallas, TX}{June 2022 -- August 2022}
     \end{entry}
+    \vspace{-0.35cm}
     \begin{highlights}
-        \item Created a Flask dashboard hosted on OpenShift 4 Kubernetes to display user adoption metrics, ensuring high availability and scalability.
+        \item Created a Flask dashboard hosted on OpenShift 4 Kubernetes to display user adoption metrics for new applications, ensuring high availability and scalability.
     \end{highlights}
 
     \section{Education}
 
-    \begin{entry}{M.S. Computer Science, California State Polytechnic University, Pomona}{Sept 2021 -- June 2023}
-    \end{entry}
-    GPA: 3.95
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l r}
+        \textbf{M.S. Computer Science, California State Polytechnic University, Pomona} & Sept 2021 -- June 2023 \\[2pt]
+        \textbf{B.S. Computational Mathematics, University of California, Los Angeles} & Sept 2017 -- June 2021
+    \end{tabular*}
 
-    \vspace{0.10cm}
-    \begin{entry}{B.S. Computational Mathematics, University of California, Los Angeles}{Sept 2017 -- June 2021}
-    \end{entry}
-
+    \vspace{-0.2cm}
     \section{Projects}
 
-    \begin{entry}{NBA Game Predictor (\href{https://nba-predictions-app.vercel.app/}{nba-predictions-app.vercel.app})}{}
+    \begin{entry}{\href{https://nba-predictions-app.vercel.app/}{NBA Game Predictor}}{}
     \end{entry}
+    \vspace{-0.35cm}
     \begin{highlights}
-        \item Engineered a full-stack web app to predict NBA outcomes with 63\% accuracy using RidgeClassifier.
-        \item Designed a pipeline from data ingestion to prediction; orchestrated with Prefect, tracked with MLflow, deployed with Kubernetes.
-        \item Tech: React, Python, scikit-learn, MLflow, Prefect, Kubernetes, Tailwind CSS
+        \item Built a full-stack web app (React, Python) to predict NBA outcomes with 63\% accuracy using RidgeClassifier with feature engineering for player and team statistics.
+        \item Created data pipeline with Prefect orchestration, MLflow tracking, and Kubernetes deployment to automate data processing and model updates.
+        \item Used scikit-learn for modeling, implemented rolling averages and opponent-based statistics, and Tailwind CSS for responsive design.
     \end{highlights}
 
-    \vspace{0.2cm}
-    \begin{entry}{Car Dealership App (\href{https://car-dealership-production-a328.up.railway.app/dealership/}{car-dealership-production-a328.up.railway.app})}{}
+    \vspace{0.05cm}
+    \begin{entry}{\href{https://car-dealership-production-a328.up.railway.app/dealership/}{Car Dealership App}}{}
     \end{entry}
+    \vspace{-0.35cm}
     \begin{highlights}
-        \item Developed a Spring Boot web app with admin/customer roles and inventory management.
-        \item Deployed to Railway with integrated CI/CD.
+        \item Developed a Spring Boot web app with admin/customer roles and inventory management, implementing user authentication with role-based access control.
+        \item Deployed to Railway with integrated CI/CD for continuous deployment and automated testing.
         \item Tech: Java 17, Spring Boot/Security, JPA/Hibernate, H2, Thymeleaf, HTML5, Bootstrap, JS, Maven
     \end{highlights}
 
-    \vspace{0.2cm}
-    \begin{entry}{Finance Market Analyzer (\href{https://finance-tracker-vmp3idcqqmpypq7reczbzp.streamlit.app/}{finance-tracker-vmp3idcqqmpypq7reczbzp.streamlit.app})}{}
+    \vspace{0.05cm}
+    \begin{entry}{\href{https://finance-tracker-vmp3idcqqmpypq7reczbzp.streamlit.app/}{Finance Market Analyzer}}{}
     \end{entry}
+    \vspace{-0.35cm}
     \begin{highlights}
-        \item Built a real-time stock analysis platform with technical indicators, sentiment analysis, and news aggregation.
-        \item Implemented API rate limiting, caching, and Plotly visualizations.
+        \item Built a real-time stock analysis platform with technical indicators, sentiment analysis, and multi-source financial news aggregation.
+        \item Implemented API rate limiting, data caching strategies, and interactive Plotly visualizations to enhance user experience.
         \item Tech: Python, Streamlit, Plotly, yfinance, Pandas, BeautifulSoup4
     \end{highlights}
 
+    \vspace{-0.2cm}
     \section{Research Experience}
 
     \begin{entry}{Hybrid Edge-Cloud Framework for Multi-Resolution Image Fusion in Agriculture}{Aug 2022 -- May 2023}
     \end{entry}
-    California State Polytechnic University, Pomona
+    \vspace{-0.35cm}
     \begin{highlights}
-        \item Led a team to develop a high-res image generation tool using deep learning on cloud and edge devices.
-        \item Achieved 60\% reduction in execution time and over 80\% similarity to ground-truth images.
-        \item Coordinated data collection and project milestones with faculty and team members.
+        \item At California State Polytechnic University, Pomona: Led a two-person team to develop a high-res image generation tool using deep learning on cloud and edge devices.
+        \item Achieved 60\% reduction in execution time and over 80\% similarity to ground-truth images through innovative algorithm optimization.
+        \item Coordinated data collection efforts and managed project progress through weekly meetings with professors and teammates.
     \end{highlights}
 
 \end{document}
